@@ -1,0 +1,13 @@
+// @include MainTransition($property:all);
+@mixin MainTransition($property) {
+   transition: $property 0.3s easy 0;
+}
+
+// @include Fontstyle($fz:16px, $lh:1.14, $ls:0.03em, $fw:400);
+@mixin Fontstyle($fz, $lh, $ls, $fw) {
+   font-size: $fz;
+   line-height: $lh;
+   letter-spacing: $ls;
+   font-weight: $fw;
+}
+

@@ -1,0 +1,134 @@
+.header__container {
+   display: flex;
+   align-items: center;
+   padding: 8px 20px;
+   background-color: $bg-color;
+   @media screen and (min-width: 768px) {
+      padding: 32px 32px 18px;
+   }
+   @media screen and (min-width: 1280px) {
+      padding: 37px 16px;
+   }
+}
+
+.nav {
+   &__list {
+      display: flex;
+      @media screen and (max-width: 1279px) {
+         flex-direction: column;
+      }
+   }
+   &__item {
+      &:not(:last-child) {
+         margin-right: 35px;
+      }
+      @media screen and (max-width: 1279px) {
+         &:not(:last-child) {
+         margin-bottom: 23px;
+      }
+      }
+   }
+   &__link {
+      text-decoration: none;
+      color: $text-white;
+      @include Fontstyle($fz:16px, $lh:1.31, $ls:0.00em, $fw:700);
+   }
+}
+
+// BUTTON
+
+.header__button-mobile {
+   align-self: center;
+   @include Fontstyle($fz: 16px, $lh:1.31, $ls:0.00em, $fw:700);
+   height: 44px;
+   min-width: 209px;
+   margin-bottom: 32px;
+   background: #fff;
+   border: none;
+   border-radius: 22px;
+   font-family: inherit;
+   color: $accent-color;
+   @include MainTransition($property: color);
+   @media screen and (min-width: 1280px) {
+      display: none;
+   }
+}
+
+.header__button {
+   @include Fontstyle($fz: 16px, $lh:1.31, $ls:0.00em, $fw:700);
+   height: 44px;
+   min-width: 159px;
+   background: #fff;
+   border: none;
+   border-radius: 22px;
+   font-family: inherit;
+   color: $accent-color;
+   @include MainTransition($property: color);
+   @media screen and (max-width: 1279px) {
+      margin-left: 32px;
+   }
+   @media screen and (max-width: 767px) {
+      display: none;
+   }
+}
+
+// BURGER + MOB-MENU
+
+.hidden-menu {
+   @media screen and (min-width: 1279px) {
+      display: none;
+   }
+}
+
+.menu-container {
+   @media screen and (max-width: 1279px) {
+      // display: none;
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      left: 0;
+      visibility: hidden;
+      transform: translate(100%);
+      transition: transform 1250ms linear;
+      width: 100vh;
+      padding: 60px 20px;
+      &.is-open {
+         opacity: 1;
+         visibility: visible;
+         transform: translate(0);
+         display: flex;
+         flex-direction: column;
+         
+      }
+      background-color: $menu-bg-color;
+      z-index: 1;
+   }
+   @media screen and (min-width: 1280px) {
+      display: flex;
+      flex-grow: 1;
+      margin-left: 175px;
+   }
+}
+
+.menu-button {
+   display: inline-flex;
+   padding: 0;
+   border: none;
+   background-color: transparent;
+   & .icon-close {
+      display: none;
+   }
+   &.is-open {
+      display: block;
+      position: absolute;
+      z-index: 2;
+      right: 20px;
+      top: 20px;
+   }
+   &.is-open .icon-close {
+      display: block;
+   }
+   &.is-open .icon-menu {
+      display: none;
+   }
+}
