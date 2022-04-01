@@ -1,0 +1,27 @@
+.hero__container {
+   display: flex;
+   align-items: center;
+   padding: 8px 20px;
+   background-color: $bg-color;
+   @media screen and (min-width: 768px) {
+      padding: 32px 32px 18px;
+   }
+   @media screen and (min-width: 1280px) {
+      padding: 37px 16px;
+   }
+}
+
+.hero__title {
+   font-family: 'Titan One', cursive;;
+   color: #fff;
+   @include Fontstyle(26px, 1.15, 0.04em, 400);
+   @media screen and (min-width: 768px) {
+      @include Fontstyle(22px, 1.14, 0.04em, 400);
+   }
+   @media screen and (min-width: 1280px) {
+      @include Fontstyle(38px, 1.16, 0.04em, 400);
+   }
+   &--accent {
+      color: $accent-color;
+   }
+}

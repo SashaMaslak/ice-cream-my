@@ -1,6 +1,6 @@
 // @include MainTransition($property:all);
 @mixin MainTransition($property) {
-   transition: $property 0.3s easy 0;
+   transition: $property 0.3s linear;
 }
 
 // @include Fontstyle($fz:16px, $lh:1.14, $ls:0.03em, $fw:400);

@@ -75,33 +75,30 @@
 // BURGER + MOB-MENU
 
 .hidden-menu {
-   @media screen and (min-width: 1279px) {
+   @media screen and (min-width: 1280px) {
       display: none;
    }
 }
 
 .menu-container {
    @media screen and (max-width: 1279px) {
-      // display: none;
       position: absolute;
       opacity: 0;
       top: 0;
-      left: 0;
+      right: 0;
       visibility: hidden;
-      transform: translate(100%);
-      transition: transform 1250ms linear;
-      width: 100vh;
+      transform: translateX(100%);
+      transition: transform 250ms linear;
       padding: 60px 20px;
+      background-color: $menu-bg-color;
+      z-index: 1;
       &.is-open {
          opacity: 1;
          visibility: visible;
-         transform: translate(0);
+         transform: translateX(0%);
          display: flex;
          flex-direction: column;
-         
       }
-      background-color: $menu-bg-color;
-      z-index: 1;
    }
    @media screen and (min-width: 1280px) {
       display: flex;

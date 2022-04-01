@@ -48,7 +48,7 @@ button {
 }
 @media screen and (min-width: 768px) and (max-width: 1279px) {
   .container {
-    min-width: 768px;
+    width: 768px;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -129,8 +129,8 @@ button {
   border-radius: 22px;
   font-family: inherit;
   color: #D41443;
-  -webkit-transition: color 0.3s easy 0;
-  transition: color 0.3s easy 0;
+  -webkit-transition: color 0.3s linear;
+  transition: color 0.3s linear;
 }
 @media screen and (min-width: 1280px) {
   .header__button-mobile {
@@ -150,8 +150,8 @@ button {
   border-radius: 22px;
   font-family: inherit;
   color: #D41443;
-  -webkit-transition: color 0.3s easy 0;
-  transition: color 0.3s easy 0;
+  -webkit-transition: color 0.3s linear;
+  transition: color 0.3s linear;
 }
 @media screen and (max-width: 1279px) {
   .header__button {
@@ -164,7 +164,7 @@ button {
   }
 }
 
-@media screen and (min-width: 1279px) {
+@media screen and (min-width: 1280px) {
   .hidden-menu {
     display: none;
   }
@@ -175,15 +175,14 @@ button {
     position: absolute;
     opacity: 0;
     top: 0;
-    left: 0;
+    right: 0;
     visibility: hidden;
-    -webkit-transform: translate(100%);
-            transform: translate(100%);
-    -webkit-transition: -webkit-transform 1250ms linear;
-    transition: -webkit-transform 1250ms linear;
-    transition: transform 1250ms linear;
-    transition: transform 1250ms linear, -webkit-transform 1250ms linear;
-    width: 100vh;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    -webkit-transition: -webkit-transform 250ms linear;
+    transition: -webkit-transform 250ms linear;
+    transition: transform 250ms linear;
+    transition: transform 250ms linear, -webkit-transform 250ms linear;
     padding: 60px 20px;
     background-color: #E17992;
     z-index: 1;
@@ -191,8 +190,8 @@ button {
   .menu-container.is-open {
     opacity: 1;
     visibility: visible;
-    -webkit-transform: translate(0);
-            transform: translate(0);
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -237,4 +236,53 @@ button {
 }
 .menu-button.is-open .icon-menu {
   display: none;
+}
+
+.hero__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 8px 20px;
+  background-color: #FFB8CA;
+}
+@media screen and (min-width: 768px) {
+  .hero__container {
+    padding: 32px 32px 18px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .hero__container {
+    padding: 37px 16px;
+  }
+}
+
+.hero__title {
+  font-family: "Titan One", cursive;
+  color: #fff;
+  font-size: 26px;
+  line-height: 1.15;
+  letter-spacing: 0.04em;
+  font-weight: 400;
+}
+@media screen and (min-width: 768px) {
+  .hero__title {
+    font-size: 22px;
+    line-height: 1.14;
+    letter-spacing: 0.04em;
+    font-weight: 400;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .hero__title {
+    font-size: 38px;
+    line-height: 1.16;
+    letter-spacing: 0.04em;
+    font-weight: 400;
+  }
+}
+.hero__title--accent {
+  color: #D41443;
 }/*# sourceMappingURL=main.css.map */
